@@ -37,14 +37,17 @@ export default function CardForm() {
                     <input id="card-number" 
                         value={formatCreditCardNumber(cardNumber)} 
                         onChange={e=>setCardNumber(e.target.value)} 
-                        maxLength={19}/>
+                        maxLength={19}
+                        onFocus={()=>setCardSide(CreditCardSide.Front)}/>
                   </div>
                   <div className="form-control">
                     <label htmlFor="card-name">Cardholder Name</label>
                     <input id="card-name" 
                      value={holderName}
+                     maxLength={16}
                       onChange={e=>setHolderName(e.target.value)}
-                      onKeyPress={onlyLetter}/>
+                      onKeyPress={onlyLetter}
+                      onFocus={()=>setCardSide(CreditCardSide.Front)}/>
                   </div>
                   <div className="form-control">
                     <label htmlFor="expires-date">Expires</label>
@@ -52,7 +55,8 @@ export default function CardForm() {
                     onChange={(e : any) => setExpiresDate(e.value)} view="month"
                      dateFormat="MM yy"
                      showIcon 
-                      yearNavigator yearRange={`${year}:${year+15}`} />
+                      yearNavigator yearRange={`${year}:${year+15}`} 
+                      onFocus={()=>setCardSide(CreditCardSide.Front)}/>
                   </div>
                   <div className="form-control">
                     <label htmlFor="cvv">CVV</label>
