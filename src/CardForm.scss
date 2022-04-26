@@ -1,0 +1,37 @@
+.card-form
+{
+    margin-top: 20px;
+    text-align: left;
+    .form-control
+    {
+        display: flex;
+        flex-direction: column;
+
+        label
+        {
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+        .p-colorpicker-preview
+        {
+            width:100%;
+        }
+        .p-calendar
+        {
+            height: 26px;
+            border:1px solid rgb(118, 118, 118);
+            font-family:'Space Mono', monospace;            ;
+            .p-button
+            {
+                background-color: #fff;
+                border:none;
+                color:black;
+            }
+        }
+        .p-colorpicker-preview
+        {
+            border:2px solid #fff;
+        }
+    }
+}
+
